@@ -128,7 +128,7 @@ import icontjs from "../assets/iconsjs"
   }
   .replySec{
     border-bottom:1px solid #e5e5e5;
-    padding:0 10px;
+    padding:5px 10px;
   }
 
   .loading {
@@ -170,6 +170,11 @@ import icontjs from "../assets/iconsjs"
 
   .markdown-text img {
     width: 92% !important;
+  }
+   .replySec .markdown-text p{
+    /* margin: 2px; */
+    padding: 10px 0;
+    font-size: 12px;
   }
   .iconloading {
   text-align: center;
