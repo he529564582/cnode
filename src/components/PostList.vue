@@ -1,104 +1,82 @@
 <template>
-<div class="PostList">
-  <!--在数据未返回的时候，显示这个正在加载的gif-->
-  <!-- <div class="loading" v-if="isLoading"></div> -->
-  <!--代表我門的主题帖子列表-->
-  <div class="posts">
-    <ul>
-      <li>
-        <div class="toobar">
-          <span>全部</span>
-          <span>精华</span>
-          <span>分享</span>
-          <span>问答</span>
-          <span>招聘</span>
+    <div class="PostList">
+        <!-- 加载loading -->
+        <div class="loading" v-if="isLoading">
+            <svg class="iconloading">
+                <use xlink:href="#icon-loading"></use>
+            </svg>
         </div>
-      </li>
-      <li v-for="post in posts">
-        <!--头像-->
-        <img :src="post.author.avatar_url" alt="">
-        <!--回复/浏览-->
-        <span class="allcount">
-          <span class="reply_count">{{post.reply_count}}</span>
-          /{{post.visit_count}}
-        </span>
-        <!--帖子的分类-->
-        <span :class="[{put_good:(post.good  == true),put_top:(post.top  == true),
-        'topiclist-tab':(post.good  != true && post.top != true)}]">
-          <span>
-            {{post | tabFormatter}}
-          </span>
-        </span>
-        <!--标题-->
-        <router-link :to="{
-        name:'post_content',
-        params:{
-          id:post.id,
-          name:post.author.loginname
-        }
-        }">
-          <span>
-          {{post.title}}
-         </span>
-        </router-link>
-        <!--最終回复时间-->
-        <span class="last_reply">
-          {{post.last_reply_at | formatDate}}
-        </span>
-      </li>
-      <!-- <li>
-        --分页
-        <pagination @handleList="renderList"></pagination>
-      </li> -->
-    </ul>
-  </div>
-</div>
+        <!-- 加载帖子数据 -->
+        <div v-else class="posts">
+            <ul>
+              <li>
+                <div class="toobar">
+                  <span>全部</span>
+                  <span>精华</span>
+                  <span>分享</span>
+                  <span>问答</span>
+                  <span>招聘</span>
+                </div>
+              </li>
+              <li v-for="post in posts">
+                <!-- 头像 -->
+                <img :src="post.author.avatar_url" alt="">
+                <!-- 回复/浏览 -->
+                <span>
+                    <span class="reply_count">{{post.reply_count}}</span>/{{post.visit_count}}
+                </span>
+                <!-- 帖子分类 -->
+                <span :class="[{
+                  put_good:(post.good == true),
+                  put_top:(post.top == true),
+                  'topiclist-tab':(post.good != true && post.top != true )
+                  }]">
+                    <span>{{post | tabFormatter}}</span>
+                  </span>
+                  <!-- 帖子标题 -->
+                <span>{{post.title}}</span>
+                <!-- 最后回复时间 -->
+                <span class="last_reply">{{post.last_reply_at | formatDate}}</span>
+              </li>
+            </ul>
+        </div>
+    </div>
 </template>
 
 <script>
-  // import pagination from './Pagination'
-    export default {
-        name: "PostList",
-      data(){
-          return {
-            isLoading:false,
-            posts:[],//代表页面的列表数组
-            postpage:1
-          }
-      },
-      components:{
-        // pagination
-      },
-      methods:{
-          getData(){
-            this.$http.get('https://cnodejs.org/api/v1/topics',{
-              params:{
-                page:this.postpage,
-                limit:20
-              }
-            })
-              .then(res=>{
-                // this.isLoading = false; //加载成功，去除动画
-                this.posts = res.data.data;
-              })
-              .catch(function (err) {
-                //处理返回失败后的问题
-                console.log(err)
-              })
-          },
-        renderList(value){
-          this.postpage = value;
-          this.getData();
-        }
-      },
-      beforeMount(){
-        // this.isLoading = true;//加载成功之前显示加载动画
-        this.getData();//在页面加载之前获取数据
+  import iconstyle from '../assets/iconsjs'
+  export default {
+    name:'PostList',
+    data(){
+      return {
+        isLoading:true,
+        posts:[]
       }
+    },
+    methods:{
+      getDate(){
+        this.$http.get('https://cnodejs.org/api/v1/topics',{
+          page:1,
+          limit:20
+        })
+        .then(res =>{
+          this.isLoading = false
+          this.posts = res.data.data
+        })
+        .catch(function(err){
+          console.log(err)
+        })
+      }
+    },
+    beforeMount(){
+      this.isLoading = true
+      this.getDate()
     }
+
+  }
 </script>
 
-<style scoped>
+<style scoped >
   .PostList{
     background-color: #e1e1e1;
   }
@@ -178,11 +156,12 @@
   }
 
   .last_reply {
+    /* display: inline-block; */
     text-align: right;
     min-width: 50px;
-    display: inline-block;
+    display: block;
     white-space: nowrap;
-    float: right;;
+    float: right;
     color: #778087;
     font-size: 12px;
   }
@@ -213,8 +192,41 @@
     text-decoration: underline;
   }
 
-  .loading {
+  .iconloading {
     text-align: center;
-    padding-top: 300px;
+    margin: 0 auto;
+    /* padding-top: 300px; */
+    display:inline-block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    /* border: 1px solid #999; */
+    border-bottom-color: transparent;
+    -webkit-animation: loading 2s linear infinite;
+    animation: loading 2s linear infinite;
+    /* 位置相关 */
+    margin-top: 20px;
+    vertical-align: middle;
+}
+@-webkit-keyframes loading {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes loading {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
   }
+  .loading {
+    background-color: #fff;
+    text-align: center;
+    padding-top: 50px;
+  }
+  /* .icon {
+    /* padding-left: 50%; */
+    /* text-align: center; */
+    /* margin: 0 auto; */
+    /* text-align: center; */
+    /* width: 4em; height: 4em; */
+    /* vertical-align: -0.15em; */
+     /*} */
 </style>
