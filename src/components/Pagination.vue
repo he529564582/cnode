@@ -59,7 +59,7 @@
               //移除最后一个数字
             this.pagebtns.splice(5,1);
           }
-          debugger
+          // debugger
           this.$emit('handleList',this.currentPage);
         }
       }
