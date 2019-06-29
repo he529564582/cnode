@@ -5,8 +5,8 @@
       </router-link>
       <ul>
         <li><router-link  :to="{name:'root'}">首页</router-link></li>
-        <li><a href="#">新手入门</a></li>
-        <li><a href="#">API</a></li>
+        <li><router-link  :to="{name:'getstart'}">新手入门</router-link></li>
+        <li><router-link  :to="{name:'api'}">API</router-link></li>
         <li><a href="#">关于</a></li>
         <li><a href="#">注册</a></li>
         <li><a href="#">登录</a></li>
