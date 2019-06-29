@@ -43,7 +43,7 @@
         }
         }"
           >
-            <span>{{post.title}}</span>
+            <span class="spantitle">{{post.title}}</span>
           </router-link>
           <!--最終回复时间-->
           <span class="last_reply">{{post.last_reply_at | formatDate}}</span>
@@ -119,7 +119,7 @@ export default {
 ul {
   list-style: none;
   width: 100%;
-  max-width: 1344px;
+  /* max-width: 1344px; */
   margin: 0 auto;
   background: #e1e1e1;
 }
@@ -147,7 +147,14 @@ li:last-child:hover {
 li span {
   line-height: 30px;
 }
-
+.spantitle {
+  max-width:70%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: middle;
+}
 .allcount {
   width: 70px;
   display: inline-block;
