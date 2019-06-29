@@ -1,12 +1,12 @@
 <template>
-  <div class="article">
-    <div class="loading" v-if="isLoading">
+<div class="article">
+<!--如果正在加载显示此div-->
+   <div class="loading" v-if="isLoading">
       <svg class="iconloading">
-        <use xlink:href="#icon-loading"></use>
+        <use xlink:href="#icon-loading" />
       </svg>
-    </div>
-
-    <div c v-else>
+  </div>
+  <div  v-else>
     <div class="topic_header">
       <div class="topic_title">{{post.title}}</div>
       <ul>
@@ -56,22 +56,21 @@
 </template>
 
 <script>
-    import iconstyle from '../assets/iconsjs'
+import icontjs from "../assets/iconsjs"
     export default {
-      name:'Article',
-      data(){
-        return {
-          isLoading:false,
-          post:{}
-        }
-      },
+        name: "Article",
+       data(){
+          return {
+            isLoading:false,//是否正在加载
+            post:{}//代表当前文章页的所有内容，所有属性
+          }
+       },
       methods:{
           getArticleData(){
-             this.$http.get(`https://cnodejs.org/api/v1/topic/${this.$route.params.id}`)
-              //  this.$http.get('https://cnodejs.org/api/v1/topic/'+ this.$route.params.id)
+            this.$http.get(`https://cnodejs.org/api/v1/topic/${this.$route.params.id}`)
               .then(res=>{
                 if(res.data.success == true){
-                  this.isLoading = false;
+                  this.isLoading =false;
                   this.post = res.data.data;
                 }
               })
@@ -81,8 +80,8 @@
           }
       },
       beforeMount(){
-        this.isLoading = true
-        this.getArticleData()
+          this.isLoading =true;
+          this.getArticleData();
       },
       watch:{
           '$route'(to,from){
@@ -93,7 +92,6 @@
 </script>
 
 <style >
-
   @import url('../assets/markdown-github.css');
   .topbar {
     padding: 10px;
@@ -173,33 +171,41 @@
   .markdown-text img {
     width: 92% !important;
   }
-    .iconloading {
-    text-align: center;
-    margin: 0 auto;
-    /* padding-top: 300px; */
-    display:inline-block;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    /* border: 1px solid #999; */
-    border-bottom-color: transparent;
-    -webkit-animation: loading 2s linear infinite;
-    animation: loading 2s linear infinite;
-    /* 位置相关 */
-    margin-top: 20px;
-    vertical-align: middle;
+  .iconloading {
+  text-align: center;
+  margin: 0 auto;
+  /* padding-top: 300px; */
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  /* border: 1px solid #999; */
+  border-bottom-color: transparent;
+  -webkit-animation: loading 2s linear infinite;
+  animation: loading 2s linear infinite;
+  /* 位置相关 */
+  margin-top: 20px;
+  vertical-align: middle;
 }
 @-webkit-keyframes loading {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 @keyframes loading {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
   }
-  .loading {
-    background-color: #fff;
-    text-align: center;
-    padding-top: 50px;
+  100% {
+    -webkit-transform: rotate(360deg);
   }
+}
+.loading {
+  background-color: #fff;
+  text-align: center;
+  padding-top: 50px;
+}
 </style>
