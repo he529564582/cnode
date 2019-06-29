@@ -34,7 +34,15 @@
                     <span>{{post | tabFormatter}}</span>
                   </span>
                   <!-- 帖子标题 -->
-                <span>{{post.title}}</span>
+                  <router-link :to="{
+                    name:'post_content',
+                    params:{
+                      id:post.id,
+
+                    }
+                  }"><span>{{post.title}}</span></router-link>
+
+
                 <!-- 最后回复时间 -->
                 <span class="last_reply">{{post.last_reply_at | formatDate}}</span>
               </li>
