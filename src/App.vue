@@ -1,23 +1,37 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <Header></Header>
+    <div class="main">
+      <router-view name="slidebar"></router-view>
+      <router-view name="main"></router-view>
+    </div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
+  import Header from './components/Header'
+  import PostList from './components/PostList'
+  import Footer from './components/Footer'
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+    Header,PostList,Footer
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+#app{
+  background: #e1e1e1
+}
+.main{
+  width: 80%;
+  margin: 0 auto;
 }
 </style>
