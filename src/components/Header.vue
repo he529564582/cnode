@@ -8,9 +8,8 @@
         <li><router-link  :to="{name:'getstart'}">新手入门</router-link></li>
         <li><router-link  :to="{name:'api'}">API</router-link></li>
         <li><router-link  :to="{name:'about'}">关于</router-link></li>
-
+        <li><router-link  :to="{name:'signin'}">登录</router-link></li>
         <li><a href="#">注册</a></li>
-        <li><a href="#">登录</a></li>
       </ul>
     </div>
 </template>

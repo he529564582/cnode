@@ -7,6 +7,7 @@ import SlideBar from '../components/SlideBar'
 import Getstart from '../components/Getstart.vue'
 import Api from '../components/Api.vue'
 import About from '../components/About.vue'
+import Signin from '../components/Signin.vue'
 
 Vue.use(Router)
 
@@ -53,6 +54,13 @@ export default new Router({
       path:'/about/',
       components:{
         main:About
+      }
+    },
+    {
+      name:'signin',
+      path:'/signin/',
+      components:{
+        main:Signin
       }
     }
   ]
