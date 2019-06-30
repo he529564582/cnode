@@ -12,8 +12,6 @@ import Signin from '../components/Signin.vue'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
-  base: '/hot/', //加上这一行
   routes: [
     {
         name:'root',
