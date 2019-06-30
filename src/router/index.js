@@ -6,6 +6,7 @@ import UserInfo from '../components/UserInfo'
 import SlideBar from '../components/SlideBar'
 import Getstart from '../components/Getstart.vue'
 import Api from '../components/Api.vue'
+import About from '../components/About.vue'
 
 Vue.use(Router)
 
@@ -45,6 +46,13 @@ export default new Router({
       path:'/api/',
       components:{
         main:Api
+      }
+    },
+    {
+      name:'about',
+      path:'/about/',
+      components:{
+        main:About
       }
     }
   ]
