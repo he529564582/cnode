@@ -106,7 +106,10 @@
           <h4>get /topic_collect/:loginname 用户所收藏的主题</h4>
           <p>
             示例：
-            <a href="/api/v1/topic_collect/alsotang" target="_blank">/api/v1/topic_collect/alsotang</a>
+            <a
+              href="/api/v1/topic_collect/alsotang"
+              target="_blank"
+            >/api/v1/topic_collect/alsotang</a>
           </p>
           <h3>用户</h3>
           <h4>get /user/:loginname 用户详情</h4>
@@ -230,28 +233,255 @@ export default {
 };
 </script>
 <style scoped>
-  .panel {
-    margin-bottom: 13px;
+.panel {
+  margin-bottom: 13px;
 }
 .panel .header {
-    padding: 10px;
-    background-color: #f6f6f6;
-    border-radius: 3px 3px 0 0;
+  padding: 10px;
+  background-color: #f6f6f6;
+  border-radius: 3px 3px 0 0;
+  /* width: 100%; */
 }
 .breadcrumb {
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: 0 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: 0 0;
 }
-.breadcrumb, .pagination ul, .span-common {
-    box-shadow: none;
+.breadcrumb,
+.pagination ul,
+.span-common {
+  box-shadow: none;
 }
 .breadcrumb {
-    padding: 8px 15px;
-    margin: 0 0 20px;
-    background-color: #f5f5f5;
-    border-radius: 4px;
+  padding: 8px 15px;
+  margin: 0 0 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+.breadcrumb > li,
+.navbar .brand {
+  text-shadow: none;
+}
+.breadcrumb > li {
+  display: inline-block;
+  text-shadow: 0 1px 0 #fff;
+}
+.breadcrumb a {
+  color: #80bd01;
+}
+a {
+  color: #08c;
+  text-decoration: none;
+}
+.breadcrumb > li > .divider {
+  padding: 0 5px;
+  color: #ccc;
+}
+.breadcrumb > .active {
+  color: #999;
+}
+.panel .inner.post,
+.panel .inner.reply,
+.panel .inner.topic,
+.panel .inner.userinfo {
+  padding: 10px;
+  border-top: 1px solid #e5e5e5;
+}
+.panel .inner {
+  padding: 10px;
+  border-radius: 0 0 3px 3px;
+}
+.panel .header.topic_header,
+.panel .inner {
+  background-color: #fff;
+}
+.panel .inner,
+.panel .inner li {
+  line-height: 2em;
+}
+.topic_content {
+  margin: 0 10px;
+}
+.markdown-text > :first-child,
+.preview > :first-child {
+  margin-top: 0;
+}
+.preview p,
+.reply_content p,
+.reply_form p,
+.topic_content p {
+  font-size: 15px;
+  line-height: 1.7em;
+  overflow: auto;
+}
+strong {
+  font-weight: 700;
+}
+.panel .markdown-text a {
+  color: #08c;
+}
+.panel .inner a {
+  color: #778087;
+}
+a {
+  color: #08c;
+  text-decoration: none;
+}
+
+.preview p,
+.reply_content p,
+.reply_form p,
+.topic_content p {
+  font-size: 15px;
+  line-height: 1.7em;
+  overflow: auto;
+}
+.preview h1,
+.preview h2,
+.preview h3,
+.preview h4,
+.preview h5,
+.preview h6,
+.reply_area h1,
+.reply_area h2,
+.reply_area h3,
+.reply_area h4,
+.reply_area h5,
+.reply_area h6,
+.topic_content h1,
+.topic_content h2,
+.topic_content h3,
+.topic_content h4,
+.topic_content h5,
+.topic_content h6 {
+  margin: 30px 0 15px;
+  border-bottom: 1px solid #eee;
+}
+h1 small,
+h3 {
+  font-size: 24.5px;
+}
+h1,
+h2,
+h3 {
+  line-height: 40px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 10px 0;
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 20px;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+.preview h1,
+.preview h2,
+.preview h3,
+.preview h4,
+.preview h5,
+.preview h6,
+.reply_area h1,
+.reply_area h2,
+.reply_area h3,
+.reply_area h4,
+.reply_area h5,
+.reply_area h6,
+.topic_content h1,
+.topic_content h2,
+.topic_content h3,
+.topic_content h4,
+.topic_content h5,
+.topic_content h6 {
+  margin: 30px 0 15px;
+  border-bottom: 1px solid #eee;
+}
+h2 small,
+h4 {
+  font-size: 17.5px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 10px 0;
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 20px;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+ol,
+ul {
+  padding: 0;
+  margin: 0 0 10px 25px;
+}
+.panel .inner,
+.panel .inner li {
+  line-height: 2em;
+}
+.markdown-text li,
+.preview li {
+  font-size: 14px;
+  line-height: 2em;
+}
+.markdown-text li code,
+.markdown-text p code,
+.preview li code,
+.preview p code {
+  color: #000;
+  background-color: #fcfafa;
+  padding: 4px 6px;
+}
+code {
+  padding: 0;
+  border: none;
+}
+code {
+  padding: 2px 4px;
+  color: #d14;
+  white-space: nowrap;
+  background-color: #f7f7f9;
+  /* border: 1px solid #e1e1e8;*/
+}
+code,
+pre {
+  padding: 0 3px 2px;
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-size: 12px;
+  color: #333;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+div pre.prettyprint {
+  font-size: 14px;
+  border-radius: 0;
+  padding: 0 15px;
+  border: none;
+  margin: 20px -10px;
+  border-width: 1px 0;
+  background: #f7f7f7;
+  -o-tab-size: 4;
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+pre code {
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+}
+.clo,
+.opn,
+.pun {
+  color: #660;
 }
 </style>
 
