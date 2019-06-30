@@ -80,7 +80,7 @@
               《
               <strong>
                 node123-
-                <em>node.js中文资料导航</em>
+                <strong>node.js中文资料导航</strong>
               </strong>》
             </p>
             <p>
@@ -140,106 +140,132 @@ export default {
 };
 </script>
 <style scoped>
-   .panel {
-    margin: 0 5px;
-    background-color: #fff;
+.panel {
+  margin: 0 5px;
+  background-color: #fff;
 }
-  .panel .header {
-    padding: 10px;
-    background-color: #f6f6f6;
-    border-radius: 3px 3px 0 0;
+.panel .header {
+  padding: 10px;
+  background-color: #f6f6f6;
+  border-radius: 3px 3px 0 0;
 }
 .breadcrumb {
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: 0 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: 0 0;
 }
 .breadcrumb a {
-    color: #80bd01;
+  color: #80bd01;
 }
 a {
-    color: #08c;
-    font-size: 13px;
-    text-decoration: none;
+  color: #08c;
+  font-size: 13px;
+  text-decoration: none;
 }
-.breadcrumb>li, .navbar .brand {
-    text-shadow: none;
+.breadcrumb > li,
+.navbar .brand {
+  text-shadow: none;
 }
 
-.breadcrumb>li {
-    display: inline-block;
-    text-shadow: 0 1px 0 #fff;
+.breadcrumb > li {
+  display: inline-block;
+  text-shadow: 0 1px 0 #fff;
 }
-.breadcrumb>li>.divider {
-    padding: 0 5px;
-    color: #ccc;
+.breadcrumb > li > .divider {
+  padding: 0 5px;
+  color: #ccc;
 }
-.breadcrumb>.active {
-    color: #999;
+.breadcrumb > .active {
+  color: #999;
 }
-.panel .inner.post, .panel .inner.reply, .panel .inner.topic, .panel .inner.userinfo {
-    padding: 10px;
-    border-top: 1px solid #e5e5e5;
-    border-bottom: 1px solid #e5e5e5;
+.panel .inner.post,
+.panel .inner.reply,
+.panel .inner.topic,
+.panel .inner.userinfo {
+  padding: 10px;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
 }
 .panel .inner {
-    padding: 10px;
-    /* border-radius: 0 0 3px 3px; */
+  padding: 10px;
+  /* border-radius: 0 0 3px 3px; */
 }
-.panel .header.topic_header, .panel .inner {
-    background-color: #fff;
+.panel .header.topic_header,
+.panel .inner {
+  background-color: #fff;
 }
-.panel .inner, .panel .inner li {
-    line-height: 2em;
+.panel .inner,
+.panel .inner li {
+  line-height: 2em;
 }
 .topic_content {
-    margin: 0 10px;
+  margin: 0 10px;
 }
-.markdown-text>:first-child, .preview>:first-child {
-    margin-top: 0;
+.markdown-text > :first-child,
+.preview > :first-child {
+  margin-top: 0;
 }
 .topic_content h2 {
-    font-size: 26px;
+  font-size: 26px;
 }
-.preview h1, .preview h2, .preview h3, .preview h4, .preview h5, .preview h6, .reply_area h1, .reply_area h2, .reply_area h3, .reply_area h4, .reply_area h5, .reply_area h6, .topic_content h1, .topic_content h2, .topic_content h3, .topic_content h4, .topic_content h5, .topic_content h6 {
-    margin: 30px 0 15px;
-    border-bottom: 1px solid #eee;
+.preview h1,
+.preview h2,
+.preview h3,
+.preview h4,
+.preview h5,
+.preview h6,
+.reply_area h1,
+.reply_area h2,
+.reply_area h3,
+.reply_area h4,
+.reply_area h5,
+.reply_area h6,
+.topic_content h1,
+.topic_content h2,
+.topic_content h3,
+.topic_content h4,
+.topic_content h5,
+.topic_content h6 {
+  margin: 30px 0 15px;
+  border-bottom: 1px solid #eee;
 }
 h2 {
-    font-size: 31.5px;
+  font-size: 31.5px;
 }
-h1, h2, h3 {
-    line-height: 40px;
+h1,
+h2,
+h3 {
+  line-height: 40px;
 }
-h1, h2, h3, h4, h5, h6 {
-    margin: 10px 0;
-    font-family: inherit;
-    font-weight: 700;
-    line-height: 20px;
-    color: inherit;
-    text-rendering: optimizelegibility;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 10px 0;
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 20px;
+  color: inherit;
+  text-rendering: optimizelegibility;
 }
 
-
-
-
-
-
-
-
+p {
+  font-size: 14px;
+}
 
 strong {
-    font-weight: 700;
+  font-weight: 700;
 }
 .panel .markdown-text a {
-    color: #08c;
+  color: #08c;
 }
 .topic_content h2 {
-    font-size: 26px;
+  font-size: 26px;
 }
 .topic_content h2 {
-    font-size: 26px;
+  font-size: 26px;
 }
-
 </style>
