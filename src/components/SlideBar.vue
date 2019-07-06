@@ -115,14 +115,15 @@
   .topbar {
     padding: 10px;
     background-color: #f6f6f6;
-    height: 16px;
-    font-size: 12px;
+    line-height: 16px;
+    font-size: 14px;
     margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   img {
-    height: 48px;
-    width: 48px;
+    height: 60px;
+    width: 60px;
     border-radius: 3px;
     margin: 10px;
   }

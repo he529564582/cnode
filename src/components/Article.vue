@@ -96,9 +96,10 @@ import icontjs from "../assets/iconsjs"
   .topbar {
     padding: 10px;
     background-color: #f6f6f6;
-    height: 16px;
-    font-size: 12px;
+    line-height: 16px;
+    font-size: 14px;
     margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .article:not(:first-child) {
@@ -169,6 +170,7 @@ import icontjs from "../assets/iconsjs"
   }
   .markdown-text p {
     font-size: 14px;
+    margin-top: 15px;
   }
   .markdown-text img {
     width: 92% !important;

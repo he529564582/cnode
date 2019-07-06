@@ -1,45 +1,51 @@
 <template>
   <div id="app">
-    <Header></Header>
+    <Header class="header"></Header>
     <div class="main">
       <router-view name="slidebar"></router-view>
       <router-view name="main"></router-view>
     </div>
-    <Footer></Footer>
+    <Footer class="footer"></Footer>
   </div>
 </template>
 
 <script>
-  import Header from './components/Header'
-  import PostList from './components/PostList'
-  import Footer from './components/Footer'
+import Header from "./components/Header";
+import PostList from "./components/PostList";
+import Footer from "./components/Footer";
 export default {
-  name: 'App',
-  components:{
-    Header,PostList,Footer
+  name: "App",
+  components: {
+    Header,
+    PostList,
+    Footer
   }
-}
+};
 </script>
 
 <style>
-html body {
+html,
+body {
   height: 100vh;
 }
-*{
+* {
   margin: 0;
   padding: 0;
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
-#app{
+#app {
   background: #e1e1e1;
   /* height: 100vh; */
+  /* display: flex;
+   flex-direction:column */
 }
-.main{
+.main {
   width: 80%;
   margin: 0 auto;
-  /* height: 80vh; */
+  /* flex: 1; */
+  min-height: calc(100vh - 160px);
 }
-  /* Header Footer {
-    height: 10vh;
-} */
+.footer {
+  height: 100px;
+}
 </style>
