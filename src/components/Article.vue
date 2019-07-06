@@ -167,14 +167,16 @@ import icontjs from "../assets/iconsjs"
     border-top: 1px solid #e5e5e5;
     padding: 0 10px;
   }
-
+  .markdown-text p {
+    font-size: 14px;
+  }
   .markdown-text img {
     width: 92% !important;
   }
    .replySec .markdown-text p{
     /* margin: 2px; */
     padding: 10px 0;
-    font-size: 12px;
+    font-size: 14px;
   }
   .iconloading {
   text-align: center;

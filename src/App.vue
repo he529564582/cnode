@@ -22,16 +22,24 @@ export default {
 </script>
 
 <style>
+html body {
+  height: 100vh;
+}
 *{
   margin: 0;
   padding: 0;
   box-sizing:border-box;
 }
 #app{
-  background: #e1e1e1
+  background: #e1e1e1;
+  /* height: 100vh; */
 }
 .main{
   width: 80%;
   margin: 0 auto;
+  /* height: 80vh; */
 }
+  /* Header Footer {
+    height: 10vh;
+} */
 </style>

@@ -8,7 +8,10 @@
         </li>
         <li>CNode 社区为国内最专业的 Node.js 开源技术社区，致力于 Node.js 的技术研究。</li>
         <li>服务器赞助商为 ucloud ，存储赞助商为 七牛云存储 ，由 alinode 提供应用性能服务。</li>
-        <li>新手搭建 Node.js 服务器，推荐使用无需备案的 <span>DigitalOcean(https://www.digitalocean.com/)</span></li>
+        <li>
+          新手搭建 Node.js 服务器，推荐使用无需备案的
+          <span>DigitalOcean(https://www.digitalocean.com/)</span>
+        </li>
       </ul>
     </div>
   </div>
@@ -24,6 +27,7 @@ export default {
   display: grid;
   grid-template-columns: 10% auto 10%;
   grid-template-areas: ". content .";
+  /* height: 100%; */
 }
 .content {
   grid-area: content;
@@ -40,7 +44,7 @@ a {
   text-decoration: none;
 }
 li span {
-  color: #08c
+  color: #08c;
 }
 </style>
 

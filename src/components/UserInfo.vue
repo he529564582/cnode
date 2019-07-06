@@ -82,6 +82,9 @@
 </script>
 
 <style scoped>
+  p,a,span{
+    font-size: 14px;
+  }
   .userInfomation {
     background: white;
     width: 75%;
@@ -91,7 +94,7 @@
     padding: 12px;
   }
   .userInfomation img {
-    width: 30px;
+    width: 50px;
   }
   .userInfomation li {
     list-style:none;
