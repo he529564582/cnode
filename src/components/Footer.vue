@@ -32,7 +32,6 @@ export default {
 .content {
   grid-area: content;
   padding: 9px 0px;
-
 }
 li {
   list-style-type: none;

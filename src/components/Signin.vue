@@ -83,7 +83,7 @@ a {
   justify-content: center;
   align-items: center;
   height: 100%;
-  background: #fff
+  background: #fff;
 }
 .form-horizontal .control-label {
   float: none;

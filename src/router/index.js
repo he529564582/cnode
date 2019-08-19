@@ -12,56 +12,56 @@ import Signin from '../components/Signin.vue'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-        name:'root',
-        path:'/',
-        components:{
-          main:PostList
+    routes: [
+        {
+            name: 'root',
+            path: '/',
+            components: {
+                main: PostList
+            }
+        },
+        {
+            name: 'post_content',
+            path: '/topic/:id&author=:name',
+            components: {
+                main: Article,
+                slidebar: SlideBar
+            }
+        },
+        {
+            name: 'user_info',
+            path: '/userinfo/:name',
+            components: {
+                main: UserInfo
+            }
+        },
+        {
+            name: 'getstart',
+            path: '/getstart/',
+            components: {
+                main: Getstart
+            }
+        },
+        {
+            name: 'api',
+            path: '/api/',
+            components: {
+                main: Api
+            }
+        },
+        {
+            name: 'about',
+            path: '/about/',
+            components: {
+                main: About
+            }
+        },
+        {
+            name: 'signin',
+            path: '/signin/',
+            components: {
+                main: Signin
+            }
         }
-      },
-      {
-        name:'post_content',
-        path:'/topic/:id&author=:name',
-        components:{
-          main:Article,
-          slidebar:SlideBar
-        }
-      },
-      {
-        name:'user_info',
-        path:'/userinfo/:name',
-        components:{
-          main:UserInfo
-        }
-      },
-      {
-      name:'getstart',
-      path:'/getstart/',
-      components:{
-        main:Getstart
-      }
-    },
-    {
-      name:'api',
-      path:'/api/',
-      components:{
-        main:Api
-      }
-    },
-    {
-      name:'about',
-      path:'/about/',
-      components:{
-        main:About
-      }
-    },
-    {
-      name:'signin',
-      path:'/signin/',
-      components:{
-        main:Signin
-      }
-    }
-  ]
+    ]
 })

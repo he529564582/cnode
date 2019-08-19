@@ -133,7 +133,6 @@ ul li:not(:first-child) {
   background-color: white;
   color: #333;
   border: 1px solid #f0f0f0;
-
 }
 
 li:not(:first-child):hover {
@@ -148,7 +147,7 @@ li span {
   line-height: 30px;
 }
 .spantitle {
-  max-width:70%;
+  max-width: 70%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
